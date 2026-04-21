@@ -76,7 +76,7 @@ echo. >> bytecode-atoms.txt
 
 powershell -ExecutionPolicy Bypass -Command ^
     "$content = Get-Content 'bytecode-atoms.txt' -Raw; "^
-    "$metodos = @('conditionalOperatorConfusing','conditionalOperatorRefactored','preIncrementConfusing','preIncrementRefactored','postIncrementConfusing','postIncrementRefactored','logicAsControlFlowConfusing','logicAsControlFlowRefactored'); "^
+    "$metodos = @('conditionalOperatorConfusing','conditionalOperatorRefactored','preIncrementConfusing','preIncrementRefactored','postIncrementConfusing','postIncrementRefactored','logicAsControlFlowConfusing','logicAsControlFlowRefactored','ommitedCurlyBracesConfusing','ommitedCurlyBracesRefactored','typeConversionConfusing','typeConversionRefactored','infixOperatorPrecedenceConfusing','infixOperatorPrecedenceRefactored','arithmeticAsLogicConfusing'; 'arithmeticAsLogicRefactored'); "^
     "Write-Host 'METODO                                    BYTES'; "^
     "Add-Content -Path 'bytecode-atoms.txt' -Value 'METODO                                    BYTES'; "^
     "Write-Host '----------------------------------------  -----'; "^
@@ -108,7 +108,11 @@ powershell -ExecutionPolicy Bypass -Command ^
     "  @{nome='Conditional Operator'; c='conditionalOperatorConfusing'; r='conditionalOperatorRefactored'},"^
     "  @{nome='Pre-Increment'; c='preIncrementConfusing'; r='preIncrementRefactored'},"^
     "  @{nome='Post-Increment'; c='postIncrementConfusing'; r='postIncrementRefactored'},"^
-    "  @{nome='Logic as Control Flow'; c='logicAsControlFlowConfusing'; r='logicAsControlFlowRefactored'}"^
+    "  @{nome='Logic as Control Flow'; c='logicAsControlFlowConfusing'; r='logicAsControlFlowRefactored'},"^
+    "  @{nome='Ommited Curly Braces'; c='ommitedCurlyBracesConfusing'; r='ommitedCurlyBracesRefactored'},"^
+    "  @{nome='Type Conversion'; c='typeConversionConfusing'; r='typeConversionRefactored'},"^
+    "  @{nome='Arithmetic as Logic'; c='arithmeticAsLogicConfusing'; r='arithmeticAsLogicRefactored'},"^
+    "  @{nome='Infix Operator Precedence'; c='infixOperatorPrecedenceConfusing'; r='infixOperatorPrecedenceRefactored'}"^
     "); "^
     "foreach ($p in $pares) { "^
     "  $bc = GetBytes $p.c; "^

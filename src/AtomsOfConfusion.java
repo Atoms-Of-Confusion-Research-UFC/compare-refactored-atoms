@@ -66,4 +66,70 @@ public class AtomsOfConfusion {
         b += 1;
         return a + b;
     }
+
+    // 5. OMMITED CURLY BRACES
+     // Com átomo de confusão
+    public void ommitedCurlyBracesConfusing(int a) {
+        if (a>0) f1(); f2();           
+    }
+
+    // Refatorado
+    public void ommitedCurlyBracesRefactored(int a) {
+        if (a>0) {
+            f1();
+         }
+        f2();        
+    }
+    public void f1(){}
+    public void f2(){}
+
+    // 6. Type Conversion
+     // Com átomo de confusão
+    public int typeConversionConfusing() {
+        int a;
+        a= 013;
+        return a;
+    }
+
+    // Refatorado
+    public int typeConversionRefactored() {
+        int a;
+        a = Integer.parseInt("13", 8);
+        return a;
+    }    
+
+    // 7. Infix Operator Precedence
+     // Com átomo de confusão
+    public int infixOperatorPrecedenceConfusing() {
+        int a= 2 + 4 * 2 / 4 ;       
+        return a;
+    }
+
+    // Refatorado
+    public int infixOperatorPrecedenceRefactored() {
+        int a = 2 + ((4 * 2)/ 4);    
+        return a;
+    }
+
+    public void printA(int a){
+        System.out.println("Var a="+a);
+    }
+
+    // 8. Arithmetic as Logic  // 
+    public int arithmeticAsLogicConfusing(int a, int b) {
+        if((a - 3) * (b - 4) != 0){
+            return b;    
+        }             
+        return a;
+    }
+    public int arithmeticAsLogicRefactored(int a, int b) {
+        if(a != 3 && b != 4){
+            return b;    
+        }             
+        return a;
+    }
+
+    
+     
+    
 }
